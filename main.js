@@ -1,6 +1,10 @@
 // Minecraft Fishing Simulator
 'use strict';
 
+// Play audio
+document.getElementById('audio').volume = 0.1; // Volume 0 - 1
+audio.currentTime = 0; // .currentTime = 0 no delay in playing sounds
+
 // Global Variables
 let numFish = 0;
 let numSalmon = 0;
@@ -10,13 +14,15 @@ let numClown = 0;
 let numJunk = 0;
 let numTreasure = 0;
 
+let result = document.getElementById('results');
+
+
 // Event Listener
 document.getElementById('mainImg').addEventListener('click', catchFish)
 
 // Event Function
 function catchFish() {
     let chance = Math.random(); // 0.0 - 0.99
-    let result = document.getElementById('results');
     // Simulate results
 
     if (chance < 0.85) { // FISH - 85% chance
@@ -68,17 +74,20 @@ function fish5x() {
     }
 }
 
-let prev = numTreasure
+let prev = 1;
+
 function findTreasure() {
     while (true) {
         catchFish();
         if (numTreasure != prev) {
-            numTreasure = prev;
+            prev = numTreasure;
+            console.log(prev, numTreasure)
             break;
         }
-        
+
     }
 }
-// Play audio
-document.getElementById('audio').volume = 0.1; // Volume 0 - 1
-audio.currentTime = 0; // .currentTime = 0 no delay in playing sounds
+
+function reset() {
+    result.innerHTML = '';
+}
