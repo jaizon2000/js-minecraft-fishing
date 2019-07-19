@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Minecraft Fishing</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  
+</head>
+
+<body>
+  <div class="main">
+    <!-- AUDIO -->
+    <audio src="music/Subwoofer_lullaby.mp3" type="audio/mp3" autoplay loop>
+      You browser does not support the audio tag.</audio>
+    <h1>Minecraft Fishing</h1>
+
+    <!--  Instructions -->
+    <p>Click the picture to simulate catching a fish. In theory there is a 85% chance of catching a fish, a 10% chance
+      of catching junk and
+      a 5% chance of catching treasure.</p>
+
+    <!-- Image & Results  -->
+    <img id="mainImg" src="images/mcFishing.jpg" style="width: 800px; height: 300px;">
+
+
+    <!-- CATH A FISH AUDIO -->
+    <audio id="audio" src="music/splash.ogg" type="audio/ogg" volume="0.4">
+      Your browser does not support the audio tag.</audio>
+
+    <p>
+      <strong>TOTALS -> </strong>
+      <div id="totals-table">
+        <div id="fishes">
+          <div>Fish: <span id="fish">0</span></div>
+          <div>Salmon: <span id='salmon'>0</span></div>
+          <div>Puffer: <span id="puffer">0</span></div>
+          <div>Clown: <span id="clown">0</span></div>
+        </div>
+        <div id="theJunk">Junk: <span id="junk">0</span></div>
+        <div id="theTreasure">Treasure: <span id="treasure">0</span></div>
+
+      </div>
+    </p>
+    <hr>
+
+
+    <p id="results"></p>
+
+
+
+    <!--  LOAD JAVASCRIPT -->
+    <script src="main.js"></script>
+
+</body>
+
+</html>
