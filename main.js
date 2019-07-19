@@ -19,10 +19,6 @@ function catchFish() {
     let result = document.getElementById('results');
     // Simulate results
 
-    // Play audio
-    document.getElementById('audio').play();
-    document.getElementById('audio').volume = 0.1; // Volume 0 - 1
-    audio.currentTime = 0; // .currentTime = 0 no delay in playing sounds
     if (chance < 0.85) { // FISH - 85% chance
         let randFish = Math.random();
 
@@ -65,3 +61,24 @@ function catchFish() {
         result.innerHTML += '<img src="images/Bow.png">'
     }
 }
+
+function fish5x() {
+    for (let i = 1; i <= 5; i++) {
+        catchFish();
+    }
+}
+
+let prev = numTreasure
+function findTreasure() {
+    while (true) {
+        catchFish();
+        if (numTreasure != prev) {
+            numTreasure = prev;
+            break;
+        }
+        
+    }
+}
+// Play audio
+document.getElementById('audio').volume = 0.1; // Volume 0 - 1
+audio.currentTime = 0; // .currentTime = 0 no delay in playing sounds
